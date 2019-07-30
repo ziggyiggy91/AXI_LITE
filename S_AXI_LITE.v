@@ -5,7 +5,7 @@
 // 
 // Create Date: 07/29/2019 04:30:41 PM
 // Design Name: 
-// Module Name: S_AXI_LITE
+// Module Name: S_AXI_LITE.v
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -87,7 +87,7 @@ module S_AXI_LITE#(
             bvalid <= 'b0;
     
     //Assert awready when AWADDR and WVALID are present.          	
-	always@(posedge S_AXI_ACLK)		
+	always@(posedge S_AXI_ACLK)
 		if(S_AXI_ARESETN == 'b0)begin
 			awready <= 'b0;
 		end
@@ -107,7 +107,7 @@ module S_AXI_LITE#(
 		    axi_awaddr <= S_AXI_LITE_AWADDR;
 		else 
 			axi_awaddr <= axi_awaddr;
-			
+			 
 	//Assert wready when WVALID is asserted and awready is present.
 	always@(posedge S_AXI_ACLK)		
 		if(S_AXI_ARESETN == 'b0)begin
